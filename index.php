@@ -1,7 +1,8 @@
 <?php
   $text = "Lorem ipsum dolor sit, amet consectetur adipisicing strunz. A vero aperiam error.";
-  $bad_word = "strunz";
-  $censored_text = str_replace("strunz", "***", $text);
+  // $bad_word = "strunz";
+  $bad_word = $_GET["badword"];
+  $censored_text = str_replace($bad_word, "***", $text);
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
   </head>
   <body>
     <h1>Badwords</h1>
-    <p><?php echo $censored_text ?></p>
-    <h5>La lunghezza del paragrafo è di <?php echo strlen($censored_text) ?> caratteri</h5>
+    <p><?php echo $censored_text; ?></p>
+    <h5>La lunghezza del paragrafo è di <?php echo strlen($censored_text); ?> caratteri</h5>
   </body>
 </html>
